@@ -1,0 +1,180 @@
+/* NEWSNOW */
+.logotext {
+  position: absolute;
+  width: 100%;
+  height: 97px;
+  left: 0px;
+  top: 0px;
+
+  background: #080347;
+}
+
+.logotext h2 {
+  position: absolute;
+  width: 364px;
+  height: 76px;
+  left: 18px;
+  top: 21px;
+
+  font-family: Volkhov;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 77px;
+
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+  display: inline-flex;
+  padding-top: 120px;
+  margin-bottom: 0px;
+}
+
+.menu a {
+  list-style-type: none;
+  color: black;
+}
+
+.menu a:hover {
+  list-style-type: none;
+  color: red;
+}
+.menu li {
+  font-family: Volkhov;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
+  margin-right: 25px;
+  margin-bottom: 0px;
+  color: #000000;
+}
+
+ul .search {
+  text-align: right;
+}
+
+.navdivide {
+  position: absolute;
+  width: 100%;
+
+  border: 2px solid #f81a0b;
+}
+/* Banner */
+.defaultHero {
+  background-color: #e04b4b;
+  margin: 0px 15% 20px 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  display: inline-block;
+  padding: 2rem 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+.banner h1 {
+  font-family: Volkhov;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 43px;
+  align-items: center;
+  color: #fffefe;
+}
+
+.banner p {
+  font-family: Volkhov;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+/* Caurosel 2 */
+.card img {
+  height: 268px;
+}
+
+.card {
+  box-shadow: 1px 1px 4px 6px #e04b4b78;
+  margin: 20px 0px 20px 0px;
+}
+
+.card:hover {
+  margin: 40px 10px 40px 10px;
+  box-shadow: 1px 1px 4px 8px #0a036d91;
+}
+.card-body {
+  color: white;
+  background: #e04b4b;
+}
+
+.card-header {
+  font-family: Volkhov;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #080347;
+  border-color: #080347;
+}
+
+.row {
+  margin: 0px 40px 0px 40px;
+}
+
+article {
+  margin: 0px 60px 0px 60px;
+}
+
+.img-responsive {
+  margin-top: 65px;
+  margin-right: 13%;
+  height: 320px;
+  width: 510px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 8px #08034770;
+}
+
+.outerText {
+  padding-top: 6%;
+}
+
+.outerText p {
+  font-family: Volkhov;
+  font-style: normal;
+  font-size: 18px;
+}
+.outerText hr {
+  margin-top: 0rem;
+  margin-bottom: 20px;
+  border-top: 5px solid #f81a0b94;
+}
+.title {
+  font-family: Volkhov;
+  font-style: normal;
+  font-weight: bold;
+  align-items: center;
+}
+
+.carousels {
+  padding: 40px 60px 0px 60px;
+  height: 500px;
+}
+
+.carousel.carousel-slider {
+  height: 500px;
+}
+
+.carousel .thumbs-wrapper {
+  display: none;
+}
