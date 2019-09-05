@@ -1,37 +1,33 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import Navs from "./Navs";
 class Navbar extends Component {
-  state = {};
   render() {
     return (
-      <>
-        <div className="logotext">
-          <h2>NEWSNOW</h2>
-        </div>
-        <div>
-          <ul className="menu">
+      <div className="navarea">
+        <div className="top">
+          <ul>
             <li>
-              <Link to="/">Home</Link>
+              <a href="">About</a>
             </li>
             <li>
-              <Link to="/business">Business</Link>
+              <a href="">Advertise</a>
             </li>
             <li>
-              <Link to="/entertain">Entertainment</Link>
+              <a href="">Contact us</a>
             </li>
             <li>
-              <Link to="/sports">Sports</Link>
-            </li>
-            <li>
-              <Link to="/health">Health</Link>
+              <a href="">Privacy & Policy</a>
             </li>
           </ul>
-          
-          <p className="navdivide" />
         </div>
-      </>
+        <div className="logotext">
+          <h2>NEWSNOW</h2>
+          <p>NEWS YOU TRUST</p>
+        </div>
+        <Navs />
+      </div>
     );
   }
 }

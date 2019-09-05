@@ -4,7 +4,8 @@ import Banner from "../components/Banner";
 import Card from "../components/Cards";
 import "../components/styles.css";
 import { withRouter } from "react-router";
-
+import moment from "moment";
+import Footer from "../components/Footer";
 class Business extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,13 @@ class Business extends Component {
       .then(data => {
         console.log(data.articles);
         const articles = data.articles;
+        articles.forEach(article => {
+          let date = new Date(article.publishedAt);
+          article.myDate = moment(date).format("DD MMM YYYY");
+
+          let category = "business";
+          article.myCategory = category;
+        });
         this.setState({ articles: articles });
       });
   };
@@ -35,8 +43,8 @@ class Business extends Component {
       if (key === i) {
         this.setState({ data1: article }, () => {
           this.props.history.push({
-            pathname: `/display/${i}`,
-            state: { data: this.state.data1 }
+            pathname: `/${article.myCategory}/display/${i}}`,
+            state: { data: this.state.data1, article: this.state.articles }
           });
           console.log(this.state.data1);
         });
@@ -53,7 +61,12 @@ class Business extends Component {
             subtitle="The Latest Business News from Across the World"
           />
         </Hero>
-        <Card entries={this.state.articles} showItem={this.showItem} />
+        <Card
+          entries={this.state.articles}
+          showItem={this.showItem}
+          category="BUSINESS"
+        />
+        <Footer />
       </>
     );
   }

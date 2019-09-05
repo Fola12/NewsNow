@@ -3,6 +3,8 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import Card from "../components/Cards";
 import "../components/styles.css";
+import moment from "moment";
+import Footer from "../components/Footer";
 
 class Entertainment extends Component {
   constructor(props) {
@@ -22,16 +24,21 @@ class Entertainment extends Component {
       .then(data => {
         console.log(data.articles);
         const articles = data.articles;
+        articles.forEach(article => {
+          let date = new Date(article.publishedAt);
+          article.myDate = moment(date).format("DD MMM YYYY");
+        });
         this.setState({ articles: articles });
       });
   }
+
   showItem = key => {
     this.state.articles.filter((article, i) => {
-      if (key == i) {
+      if (key === i) {
         this.setState({ data1: article }, () => {
           this.props.history.push({
-            pathname: `/display/${i}`,
-            state: { data: this.state.data1 }
+            pathname: `/${article.myCategory}/display/${i}}`,
+            state: { data: this.state.data1, article: this.state.articles }
           });
           console.log(this.state.data1);
         });
@@ -48,7 +55,12 @@ class Entertainment extends Component {
             subtitle="Bringing you The Latest Scope from The Entertainment Industry"
           />
         </Hero>
-        <Card entries={this.state.articles} showItem={this.showItem} />;
+        <Card
+          entries={this.state.articles}
+          showItem={this.showItem}
+          category="ENTERTAINMENT"
+        />
+        <Footer />
       </>
     );
   }
