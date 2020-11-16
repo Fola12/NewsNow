@@ -21,7 +21,6 @@ class Health extends Component {
     )
       .then(results => results.json())
       .then(data => {
-        console.log(data.articles);
         const articles = data.articles;
         articles.forEach(article => {
           let date = new Date(article.publishedAt);
@@ -32,14 +31,13 @@ class Health extends Component {
   }
 
   showItem = key => {
-    this.state.articles.filter((article, i) => {
+    return this.state.articles.filter((article, i) => {
       if (key === i) {
         this.setState({ data1: article }, () => {
           this.props.history.push({
             pathname: `/${article.myCategory}/display/${i}}`,
             state: { data: this.state.data1, article: this.state.articles }
           });
-          console.log(this.state.data1);
         });
       }
     });

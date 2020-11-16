@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
+import { NavLink } from "react-router-dom";
+
 import Navs from "./Navs";
 class Navbar extends Component {
   render() {
@@ -9,16 +11,18 @@ class Navbar extends Component {
         <div className="top">
           <ul>
             <li>
-              <a href="">About</a>
+              <NavLink exact to="/error">
+                About
+              </NavLink>
             </li>
             <li>
-              <a href="">Advertise</a>
+              <a href="#">Advertise</a>
             </li>
             <li>
-              <a href="">Contact us</a>
+              <a href="#">Contact us</a>
             </li>
             <li>
-              <a href="">Privacy & Policy</a>
+              <a href="#">Privacy & Policy</a>
             </li>
           </ul>
         </div>

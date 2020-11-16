@@ -17,15 +17,10 @@ class Display extends Component {
     };
   }
   componentDidMount() {
-    console.log(this.props.location.state.data);
     this.setState({ newss: this.props.location.state.article });
-    {
-      console.log(this.state.newss);
-    }
-    console.log(this.state.newss);
   }
 
-  renderAlbums() {
+  renderContents() {
     let news = this.props.location.state.data;
     return (
       <Contents
@@ -39,8 +34,6 @@ class Display extends Component {
   }
 
   renderSideContent() {
-    let posts = this.props.location.state.article;
-    console.log(posts);
     return (
       <SideContent
         entries={this.props.location.state.article}
@@ -51,14 +44,13 @@ class Display extends Component {
   showItem = key => {
     let newr = this.props.location.state.article;
 
-    newr.filter((article, i) => {
+   return newr.filter((article, i) => {
       if (key === article.title) {
         this.setState({ data1: article }, () => {
           this.props.history.push({
             pathname: `/display/${i}`,
             state: { data: this.state.data1, article: this.state.newss }
           });
-          console.log(this.state.data1);
         });
       }
     });
@@ -68,7 +60,7 @@ class Display extends Component {
     return (
       <>
         <div className="row contentrow">
-          <div className="col-lg-7 col-md-8 "> {this.renderAlbums()}</div>
+          <div className="col-lg-7 col-md-8"> {this.renderContents()}</div>
           <div className="col-lg-4 col-md-4 ">
             <div className="sidecontent">
               <h3>Related posts</h3>
@@ -79,7 +71,7 @@ class Display extends Component {
               <h5>Categories</h5>
               <p className="divider"></p>
 
-              <div class="siderow">
+              <div className="siderow">
                 <ul className="categoryli">
                   <li>
                     <span>
@@ -94,7 +86,6 @@ class Display extends Component {
                     </span>
                   </li>
                   <li>
-                    {" "}
                     <span>
                       <IconContext.Provider
                         value={{ size: "12px", className: "caticons" }}
@@ -107,7 +98,6 @@ class Display extends Component {
                     </span>
                   </li>
                   <li>
-                    {" "}
                     <span>
                       <IconContext.Provider
                         value={{ size: "12px", className: "caticons" }}

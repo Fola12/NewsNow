@@ -18,7 +18,6 @@ class Carousels extends Component {
     )
       .then(results => results.json())
       .then(data => {
-        console.log(data.articles);
         const articles = data.articles;
         this.setState({ articles: articles });
       });
@@ -27,7 +26,7 @@ class Carousels extends Component {
   renderAlbums() {
     return this.state.articles.map((news, i) => {
       return (
-        <div id={i}>
+        <div key={i}>
           <img src={news.urlToImage} alt="" />
           <div className="bottom">
             <span>HEADLINE NEWS</span>

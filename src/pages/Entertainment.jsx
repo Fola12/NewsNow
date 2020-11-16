@@ -22,7 +22,6 @@ class Entertainment extends Component {
     )
       .then(results => results.json())
       .then(data => {
-        console.log(data.articles);
         const articles = data.articles;
         articles.forEach(article => {
           let date = new Date(article.publishedAt);
@@ -40,7 +39,6 @@ class Entertainment extends Component {
             pathname: `/${article.myCategory}/display/${i}}`,
             state: { data: this.state.data1, article: this.state.articles }
           });
-          console.log(this.state.data1);
         });
       }
     });
